@@ -1,4 +1,4 @@
-package com.java.basic._20190101.selectsort;
+package com.java.basic._20200101.selectsort;
 
 public class simpleSelectSortClass {
     /**

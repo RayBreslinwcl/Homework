@@ -1,4 +1,4 @@
-package com.java.basic._20190101.insertsort;
+package com.java.basic._20200101.insertsort;
 
 /**
  * 插入排序
