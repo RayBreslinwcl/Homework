@@ -1,4 +1,4 @@
-package com.java.basic._20200127_datastructure_algorithm;
+package com.java.basic._20200127_datastructure_algorithm._1queue;
 
 /**
  * Created by Administrator on 2020/1/27.
@@ -9,8 +9,8 @@ public class ArrayQueueTest {
 
 class ArrayQueueSGG{
     private int maxSize;//数组最大容量
-    private int front;//队列头
-    private int rear;//队列尾
+    private int front;//队列头，指向第一个的前面一个；
+    private int rear;//队列尾，指向最后一个元素
     private int[] array;//存放数据，模拟队列
 
     public ArrayQueueSGG(int size){
