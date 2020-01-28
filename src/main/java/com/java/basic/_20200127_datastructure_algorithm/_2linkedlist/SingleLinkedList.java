@@ -142,8 +142,53 @@ public class SingleLinkedList {
 
         //显示
         singleLinkedList.list();
+        //结果：HeroNode{no=1, name='宋江', nickname='及时雨', next=HeroNode{no=2, name='卢俊义', nickname='玉麒麟', next=HeroNode{no=3, name='吴用', nickname='智多星', next=null}}}
+        //HeroNode{no=2, name='卢俊义', nickname='玉麒麟', next=HeroNode{no=3, name='吴用', nickname='智多星', next=null}}
+        //HeroNode{no=3, name='吴用', nickname='智多星', next=null}
+
+        //面试题目1
+        HeroNode res1=findLaskKNode(singleLinkedList.head,1);
+        System.out.println(res1);
+        //结果：HeroNode{no=3, name='吴用', nickname='智多星', next=null}
+
 
     }
+    //面试题目
+    //1.查找单链表中倒数第k个节点
+    //返回链表节点个数
+    public static int getLength(HeroNode head){
+        if(head.next==null){
+            return 0;
+        }
+        int length=0;
+        HeroNode cur=head.next;
+        while (cur!=null){
+            length++;
+            cur=cur.next;
+        }
+        return length;
+    }
+    //返回倒数第k个节点
+    //1.先遍历，获得链表总长度size
+    //2.得到size，重新遍历到(size-index),就可以得到
+    public static HeroNode findLaskKNode(HeroNode head,int index){
+
+        if(head.next==null){
+            return null;//没有找到
+        }
+        int size=getLength(head);
+        //停止条件
+        if(index>size || index<=0){
+            return null;
+        }
+        //辅助遍历
+        HeroNode cur=head.next;
+        for (int i=0;i<(size-index);i++){
+            cur=cur.next;
+        }
+        return cur;
+    }
+
 
 }
 
