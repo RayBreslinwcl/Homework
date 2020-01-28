@@ -1,5 +1,7 @@
 package com.java.basic._20200127_datastructure_algorithm._2linkedlist;
 
+import java.util.Stack;
+
 /**
  * Created by Administrator on 2020/1/28.
  * 单向链表
@@ -187,6 +189,35 @@ public class SingleLinkedList {
             cur=cur.next;
         }
         return cur;
+    }
+
+    //2.单链表反转
+    //递归和迭代
+    //参考
+    //https://github.com/RayBreslinwcl/algorithm/tree/master/src/main/java/com/algorithm/learn/Leetcode/_206reverse_linked_list
+
+    //3.逆序打印单链表
+    //思路1：先将链表反转，然后遍历。但是会破坏原理链表结构
+    //思路2：可以利用栈这个数据结构，将各个节点压入到核中，然后利用栈的先进后出的特点，就实现了逆序打印的效果。
+    /**
+     * 使用栈后进先出进行打印
+     * @param head
+     */
+    public static void reversePrint(HeroNode head){
+        if(head.next==null){
+            return;//空链表，不能打印
+        }
+
+        Stack<HeroNode> stack=new Stack<>();
+        HeroNode cur=head.next;
+        while (cur!=null){
+            stack.push(cur);
+            cur=cur.next;
+        }
+        //打印
+        while (stack.size()>0){
+            System.out.println(stack.pop());
+        }
     }
 
 
